@@ -1,58 +1,68 @@
 ﻿@model CatalogoDeProductos.Model.Producto
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar Producto";
 }
 
-<h1>Edit</h1>
+<h1 class="mb-3">Editar Producto</h1>
 
-<h4>Producto</h4>
+<h4>Modifique los datos del producto</h4>
 <hr />
+
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
         <form asp-action="Edit">
+            <!-- 🔑 Id oculto (CRÍTICO) -->
+            <input asp-for="Id" type="hidden" />
+
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Id" class="control-label"></label>
-                <input asp-for="Id" class="form-control" />
-                <span asp-validation-for="Id" class="text-danger"></span>
-            </div>
-            <div class="form-group">
+
+            <!-- Nombre -->
+            <div class="form-group mb-3">
                 <label asp-for="Nombre" class="control-label"></label>
                 <input asp-for="Nombre" class="form-control" />
                 <span asp-validation-for="Nombre" class="text-danger"></span>
             </div>
-            <div class="form-group">
+
+            <!-- Precio -->
+            <div class="form-group mb-3">
                 <label asp-for="Precio" class="control-label"></label>
                 <input asp-for="Precio" class="form-control" />
                 <span asp-validation-for="Precio" class="text-danger"></span>
             </div>
-            <div class="form-group">
+
+            <!-- Categoría -->
+            <div class="form-group mb-3">
                 <label asp-for="Categoria" class="control-label"></label>
                 <input asp-for="Categoria" class="form-control" />
                 <span asp-validation-for="Categoria" class="text-danger"></span>
             </div>
-            <div class="form-group form-check">
+
+            <!-- Activo -->
+            <div class="form-group form-check mb-3">
+                <input class="form-check-input" asp-for="Activo" />
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Activo" /> @Html.DisplayNameFor(model => model.Activo)
+                    @Html.DisplayNameFor(model => model.Activo)
                 </label>
             </div>
-            <div class="form-group">
+
+            <!-- (Opcional) Mostrar fecha como solo lectura -->
+            <div class="form-group mb-3">
                 <label asp-for="FechaIngreso" class="control-label"></label>
-                <input asp-for="FechaIngreso" class="form-control" />
-                <span asp-validation-for="FechaIngreso" class="text-danger"></span>
+                <input asp-for="FechaIngreso" class="form-control" readonly />
             </div>
+
+            <!-- Botones -->
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Actualizar" class="btn btn-warning" />
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
