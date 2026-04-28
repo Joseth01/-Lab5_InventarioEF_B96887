@@ -17,7 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CatalogoDeProductos.BL\CatalogoDeProductos.BL.csproj" />
     <ProjectReference Include="..\CatalogoDeProductos.Model\CatalogoDeProductos.Model.csproj" />
   </ItemGroup>
 

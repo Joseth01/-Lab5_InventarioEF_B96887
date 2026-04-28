@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CatalogoDeProductos.DAL\CatalogoDeProductos.DAL.csproj" />
     <ProjectReference Include="..\CatalogoDeProductos.Model\CatalogoDeProductos.Model.csproj" />
   </ItemGroup>
 
