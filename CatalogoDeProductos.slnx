@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="CatalogoDeProductos.BL/CatalogoDeProductos.BL.csproj" />
+  <Project Path="CatalogoDeProductos.DAL/CatalogoDeProductos.DAL.csproj" />
+  <Project Path="CatalogoDeProductos.Model/CatalogoDeProductos.Model.csproj" />
+  <Project Path="CatalogoDeProductos.Web/CatalogoDeProductos.Web.csproj" />
+</Solution>
